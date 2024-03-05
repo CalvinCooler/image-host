@@ -1,7 +1,7 @@
 <Module>
 <ModulePrefs title="Drift Boss"/>
 <Content type="html">
-<![CDATA[ <!DOCTYPE html> <html><style>
+<![CDATA[ <!DOCTYPE html> <html><title>Vortex Games</title><style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
