@@ -1,0 +1,133 @@
+
+<html>
+<head>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/doody125/image-host@main/vortex.png" type="image/x-icon" />
+    <title>Vortex Games</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #0f0f0f;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            filter: blur(1px);
+        }
+
+        section {
+            margin: 20px;
+            z-index: 1;
+            color: #fff;
+        }
+
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .game-item {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .game-image {
+        width: 140px;
+        height: 140px;
+        cursor: pointer;
+        border: 4px solid #000;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .game-item:hover .game-image {
+        transform: scale(1.12);
+    }
+
+        .game-text {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <div class="game-container">
+            <div class="game-item">
+                <a href="http://tr.likesyou.org" target="_blank">
+                    <img class="game-image" src="http://tinyurl.com/4b7zb95a" alt="Game 1">
+                </a>
+                <div style="font-family:'Courier New';" class="game-text">Tunnel Rush</div>
+            </div>
+
+            <div class="game-item">
+                <a href="https://shorturl.at/mFZ09" target="_blank">
+                    <img class="game-image" src="http://tinyurl.com/7edz2phd" alt="Game 2">
+                </a>
+                <div style="font-family:'Courier New';" class="game-text">Drift Boss</div>
+            </div>
+            
+            <!-- Add more game items with images and text as needed -->
+        </div>
+    </section>
+
+    <canvas id="rainCanvas"></canvas>
+
+    <script>
+        // JavaScript for rain effect
+        const canvas = document.getElementById('rainCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size to match the window
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Generate random raindrops with color #0008fa
+        const raindrops = [];
+        for (let i = 0; i < 300; i++) { // Increased the number of raindrops
+            raindrops.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 4 + 1, // Randomize raindrop radius
+                speed: Math.random() * 5 + 2
+            });
+        }
+
+        function drawRain() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (const drop of raindrops) {
+                ctx.beginPath();
+                ctx.arc(drop.x, drop.y, drop.radius, 0, Math.PI * 2); // Use arc to draw raindrops as dots
+                ctx.fillStyle = '#1e58bc'; // Set raindrop color to #0008fa
+                ctx.fill();
+                ctx.shadowBlur = 20; // Increase shadow blur for a more pronounced effect
+                ctx.shadowColor = '#1e58bc'; // Set shadow color to match raindrop color
+
+                drop.y += drop.speed;
+
+                if (drop.y > canvas.height) {
+                    drop.y = 0;
+                }
+            }
+
+            requestAnimationFrame(drawRain);
+        }
+
+        drawRain();
+
+        // Resize canvas when the window is resized
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+
+</body>
+</html>
