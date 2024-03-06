@@ -1,0 +1,38 @@
+<Module>
+  <ModulePrefs title="vortex" />
+  <Content type="html">
+    <![CDATA[ 
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<link rel="icon" href="https://cdn.jsdelivr.net/gh/doody125/image-host@main/vortex.png" type="image/x-icon" />
+				<title>Vortex Games</title>
+			</head>
+			<style> body { font-family: Arial, sans-serif; margin: 0; padding: 0; overflow: hidden; /* Hide overflow to prevent scrollbar */ background-color: #0f0f0f; } canvas { position: fixed; top: 0; left: 0; z-index: -1; /* Place the canvas behind everything else */ filter: blur(1px); /* Apply a blur effect to the entire canvas */ } section { margin: 20px; z-index: 1; /* Ensure the content is above the canvas */ color: #fff; /* Set text color to white for better visibility */ } .game-container { display: flex; flex-wrap: wrap; justify-content: center; } .game-item { margin: 10px; text-align: center; /* Center-align text */ } .game-image { width: 180px; height: 180px; cursor: pointer; border: 4px solid #000; /* 4px black border */ border-radius: 15px; /* 10px border radius for rounded corners */ } .game-text { margin-top: 10px; } </style>
+		</head>
+		<body>
+			<section>
+				<div class="game-container">
+					<div class="game-item">
+						<a href="http://tr.likesyou.org" target="_blank">
+							<img class="game-image" src="http://tinyurl.com/4b7zb95a" alt="Game 1">
+							</a>
+							<div style="font-family:'Courier New';" class="game-text">Tunnel Rush</div>
+						</div>
+						<div class="game-item">
+							<a href="https://shorturl.at/mFZ09" target="_blank">
+								<img class="game-image" src="http://tinyurl.com/7edz2phd" alt="Game 2">
+								</a>
+								<div style="font-family:'Courier New';" class="game-text">Drift Boss</div>
+							</div>
+							<div class="game-item">
+								<a href="https://tinyurl.com/dbbrefnp" target="_blank">
+									<img class="game-image" src="https://tinyurl.com/z82tzan8" alt="Game 2">
+									</a>
+									<div style="font-family:'Courier New';" class="game-text">Moto X3M Spooky Land</div>
+								</div>
+								<!-- Add more game items with images and text as needed -->
+							</div>
+						</section></html> ]]>
+  </Content>
+</Module>
